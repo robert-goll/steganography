@@ -3,11 +3,21 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title></title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
+    <title>Steganography</title>
+    <link href="static/style.css" rel="stylesheet" type="text/css" />
   </head>
+  <script language="javascript" src="/templates/static/javascript/select.js"></script>
   <body>
-      <h1>Hello World!</h1>
-    <!-- <script src="script.js"></script> -->
+      <h1>Select or upload an image</h1>
+      <input type="file" id="files" name="files[]">
+      <output id="lists"></output>
+      <!-- <script>
+        if(window.File && window.FileReader && window.FileList && window.Blob){
+          alert("Success");
+        } else{
+          alert("The File API is not supported on your browser. This app will not work.");
+        }
+      </script> -->
   </body>
 </html>
+    
