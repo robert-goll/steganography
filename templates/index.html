@@ -3,22 +3,26 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>Steganography</title>
+    {% if title %}
+    <title>{{ title }}</title>
+    {% else %}
+    <title>ERR NO TITLE</title>
+    {% endif %}
     <!-- <link href="static/style.css" rel="stylesheet" type="text/css" /> -->
   </head>
-  <script language="text/javascript" src="{{url_for('static', filename='select.js')}}"></script>
   <body>
+      <script language="javascript" src="{{url_for('static', filename='select.js')}}"></script>
       <h1>Select or upload an image</h1>
       <input type="file" id="files" name="files[]">
       <output id="lists"></output>
-      <input type="button" onclick="foo()" value="foo">
-      <!-- <script>
-        if(window.File && window.FileReader && window.FileList && window.Blob){
-          alert("Success");
-        } else{
-          alert("The File API is not supported on your browser. This app will not work.");
-        }
-      </script> -->
+      {% for post in posts %}
+      <div>
+        <p>
+          {{ post.author.name }} says: <b>{{ post.body }}</b>
+        <p>
+      <div>
+      {% endfor %}
+      <!-- <input type="button" onclick="foo()" value="foo"> -->
   </body>
 </html>
     
