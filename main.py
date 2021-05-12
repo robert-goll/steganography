@@ -1,4 +1,6 @@
 from flask import Flask, request, render_template
+from Steganography import app
+from app.forms import LoginForm
 
 app = Flask(__name__, static_folder="static")
 
@@ -14,7 +16,8 @@ def index():
             "body": {"SN15 is the greatest other starship ever"}
         }
     ]
-    return render_template("index.html", title = "Starship SN15 wont RUD", posts = posts)
+    form = LoginForm()
+    return render_template("login.html", title = "Starship SN15 wont RUD", posts = posts)
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port='8081', debug=True)
