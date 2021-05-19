@@ -4,6 +4,8 @@ from forms import LoginForm
 
 app = Flask(__name__, static_folder="static")
 
+app.config["SECRET_KEY"] = "just testing"
+
 @app.route("/")
 def index():
     posts = [
