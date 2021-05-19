@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, flash, redirect
 # from Steganography import app
 from forms import LoginForm
 
@@ -6,7 +6,7 @@ app = Flask(__name__, static_folder="static")
 
 app.config["SECRET_KEY"] = "just testing"
 
-@app.route("/")
+@app.route("/", methods=["GET", "POST"])
 def index():
     posts = [
         {
@@ -19,7 +19,10 @@ def index():
         }
     ]
     form = LoginForm()
-    return render_template("login.html", title = "Starship SN15 wont RUD", posts = posts)
+    if form.validate_on_submit():
+        flash(f"Login requested for user{form.username.data}, remember_me={form.remember_me.data}")
+        return redirect("/index")
+    return render_template("login.html", title = "Starship SN15 wont RUD", form = form)
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port='8081', debug=True)
