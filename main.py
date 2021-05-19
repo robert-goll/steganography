@@ -1,6 +1,6 @@
 from flask import Flask, request, render_template
-from Steganography import app
-from app.forms import LoginForm
+# from Steganography import app
+from forms import LoginForm
 
 app = Flask(__name__, static_folder="static")
 
