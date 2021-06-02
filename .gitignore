@@ -1,2 +1,4 @@
 stega1/
 __pycache__/
+migrations/
+app.db
