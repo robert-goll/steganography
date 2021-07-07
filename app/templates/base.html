@@ -15,7 +15,8 @@
         Steganography&nbsp;
         <a href="{{url_for('index')}}">Home</a>&nbsp;
         {% if current_user.is_anonymous %}
-        <a href="{{url_for('login')}}">Login</a>
+        <a href="{{url_for('login')}}">Login</a>&nbsp;
+        <a href="{{ url_for('register') }}">Click to Register!</a>
         {% else %}
         <a href="{{url_for('logout')}}">Log Out</a>
         {%  endif %}
