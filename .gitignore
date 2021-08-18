@@ -1,0 +1,7 @@
+stega1/
+stega2/
+__pycache__/
+migrations/
+app.db
+.vscode/
+.flaskenv
